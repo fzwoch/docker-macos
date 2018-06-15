@@ -6,7 +6,7 @@ RUN apt install -y git make clang
 
 RUN cd /opt \
  && git clone https://github.com/tpoechtrager/osxcross.git \
- &&	cd osxcross \
+ && cd osxcross \
  && git checkout 1a1733a773fe26e7b6c93b16fbf9341f22fac831
 
 COPY MacOSX10.11.sdk.tar.xz /opt/osxcross/tarballs/MacOSX10.11.sdk.tar.xz

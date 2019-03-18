@@ -1,14 +1,16 @@
 FROM debian:stretch
 MAINTAINER Florian Zwoch <fzwoch@gmail.com>
 
+COPY MacOSX10.11.sdk.tar.xz /
+
 RUN apt update
-RUN apt install -y curl git make clang
+RUN apt install -y git make clang
 
 RUN cd /opt \
  && git clone https://github.com/tpoechtrager/osxcross.git \
  && cd osxcross \
- && git checkout 1a1733a773fe26e7b6c93b16fbf9341f22fac831 \
- && curl -L -o tarballs/MacOSX10.11.sdk.tar.xz https://github.com/phracker/MacOSX-SDKs/releases/download/MacOSX10.11.sdk/MacOSX10.11.sdk.tar.xz \
+ && git checkout ee54d9fd43b45947ee74c99282b360cd27a8f1cb \
+ && mv /MacOSX10.11.sdk.tar.xz tarballs \
  && PORTABLE=1 UNATTENDED=1 ./build.sh
 
 ENV PATH $PATH:/opt/osxcross/target/bin

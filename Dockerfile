@@ -1,5 +1,5 @@
 FROM debian:stretch
-MAINTAINER Florian Zwoch <fzwoch@gmail.com>
+LABEL maintainer="Florian Zwoch <fzwoch@gmail.com>"
 
 COPY MacOSX10.11.sdk.tar.xz /
 

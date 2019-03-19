@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:buster
 LABEL maintainer="Florian Zwoch <fzwoch@gmail.com>"
 
 COPY MacOSX10.11.sdk.tar.xz /

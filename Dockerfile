@@ -4,7 +4,7 @@ LABEL maintainer="Florian Zwoch <fzwoch@gmail.com>"
 COPY MacOSX10.11.sdk.tar.xz /
 
 RUN apt update \
- && apt install -y git make clang \
+ && apt install -y git make clang llvm \
  && rm -rf /var/lib/apt/lists/*
 
 RUN cd /opt \

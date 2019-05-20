@@ -3,8 +3,9 @@ LABEL maintainer="Florian Zwoch <fzwoch@gmail.com>"
 
 COPY MacOSX10.11.sdk.tar.xz /
 
-RUN apt update
-RUN apt install -y git make clang
+RUN apt update \
+ && apt install -y git make clang \
+ && rm -rf /var/lib/apt/lists/*
 
 RUN cd /opt \
  && git clone https://github.com/tpoechtrager/osxcross.git \

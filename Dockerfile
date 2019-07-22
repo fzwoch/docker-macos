@@ -1,17 +1,17 @@
 FROM debian:buster
 LABEL maintainer="Florian Zwoch <fzwoch@gmail.com>"
 
-COPY MacOSX10.11.sdk.tar.xz /
+COPY MacOSX10.14.sdk.tar.xz /
 
 RUN apt update \
- && apt install -y git make clang llvm \
+ && apt install -y git cmake libxml2-dev libssl-dev libz-dev clang llvm \
  && rm -rf /var/lib/apt/lists/*
 
 RUN cd /opt \
  && git clone https://github.com/tpoechtrager/osxcross.git \
  && cd osxcross \
- && git checkout ee54d9fd43b45947ee74c99282b360cd27a8f1cb \
- && mv /MacOSX10.11.sdk.tar.xz tarballs \
+ && git checkout 16efae89925c5cee1a7ae946c036c570f688f852 \
+ && mv /MacOSX10.14.sdk.tar.xz tarballs \
  && PORTABLE=1 UNATTENDED=1 ./build.sh
 
 ENV PATH $PATH:/opt/osxcross/target/bin

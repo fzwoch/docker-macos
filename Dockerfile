@@ -10,7 +10,7 @@ RUN apt update \
 RUN cd /opt \
  && git clone https://github.com/tpoechtrager/osxcross.git \
  && cd osxcross \
- && git checkout 581995329907335724bd1aacc015e719c5456e82 \
+ && git checkout 98149255feea67f3d01538007fe4f2b53c45ffb8 \
  && mv /MacOSX10.14.sdk.tar.xz tarballs \
  && PORTABLE=1 UNATTENDED=1 ./build.sh
 

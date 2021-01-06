@@ -1,1 +1,1 @@
-MacOSX11.1.sdk.tar.xz filter=lfs diff=lfs merge=lfs -text
+*.zx filter=lfs diff=lfs merge=lfs -text

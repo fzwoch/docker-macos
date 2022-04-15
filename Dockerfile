@@ -11,7 +11,7 @@ RUN cd /opt \
  && git clone https://github.com/tpoechtrager/osxcross.git \
  && cd osxcross \
  && git checkout be2b79f444aa0b43b8695a4fb7b920bf49ecc01c \
- && mv /MacOSX12.0.sdk.tar.xz tarballs \
+ && mv /MacOSX12.3.sdk.tar.xz tarballs \
  && PORTABLE=1 UNATTENDED=1 ./build.sh
 
 ENV PATH $PATH:/opt/osxcross/target/bin

@@ -2,7 +2,6 @@ FROM debian:bullseye
 LABEL maintainer="Florian Zwoch <fzwoch@gmail.com>"
 
 COPY MacOSX12.3.sdk.tar.xz /
-COPY patch.diff /opt
 
 RUN apt update \
  && apt install -y git cmake libxml2-dev libssl-dev libz-dev clang llvm xz-utils \
@@ -11,8 +10,7 @@ RUN apt update \
 RUN cd /opt \
  && git clone https://github.com/tpoechtrager/osxcross.git \
  && cd osxcross \
- && git checkout be2b79f444aa0b43b8695a4fb7b920bf49ecc01c \
- && git apply ../patch.diff \
+ && git checkout 9643e9a05e8e881b67a1956c1187133ed5c3d206 \
  && mv /MacOSX12.3.sdk.tar.xz tarballs \
  && PORTABLE=1 UNATTENDED=1 ./build.sh
 

@@ -1,4 +1,4 @@
-FROM debian:bullseye
+FROM debian:bookworm
 LABEL maintainer="Florian Zwoch <fzwoch@gmail.com>"
 
 COPY MacOSX14.0.sdk.tar.xz /

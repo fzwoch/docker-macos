@@ -1,7 +1,7 @@
 FROM debian:bullseye
 LABEL maintainer="Florian Zwoch <fzwoch@gmail.com>"
 
-COPY MacOSX13.0.sdk.tar.xz /
+COPY MacOSX14.0.sdk.tar.xz /
 
 RUN apt update \
  && apt install -y git cmake libxml2-dev libssl-dev libz-dev clang llvm xz-utils \

@@ -1,10 +1,10 @@
-FROM debian:bookworm
+FROM debian:trixie
 LABEL maintainer="Florian Zwoch <fzwoch@gmail.com>"
 
 COPY MacOSX15.1.sdk.tar.xz /
 
 RUN apt update \
- && apt install -y git cmake libxml2-dev libssl-dev libz-dev clang llvm xz-utils \
+ && apt install -y git cmake libxml2-dev libssl-dev libz-dev clang g++ libc++-dev llvm xz-utils \
  && rm -rf /var/lib/apt/lists/*
 
 RUN cd /opt \
@@ -14,4 +14,4 @@ RUN cd /opt \
  && mv /MacOSX15.1.sdk.tar.xz tarballs \
  && PORTABLE=1 UNATTENDED=1 ./build.sh
 
-ENV PATH $PATH:/opt/osxcross/target/bin
+ENV PATH=$PATH:/opt/osxcross/target/bin
